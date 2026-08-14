@@ -30,7 +30,7 @@ export function Contact() {
                 open.
               </p>
               <motion.a
-                href={socials[0].href}
+                href="mailto:kavi@example.com"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-elegant"
