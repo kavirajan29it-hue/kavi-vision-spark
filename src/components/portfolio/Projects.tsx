@@ -17,15 +17,26 @@ function openLink(href: string | undefined, label: string) {
 }
 
 /**
- * Replace these placeholder projects with real ones.
- * Set `github` to undefined to hide the GitHub button on a card.
+ * Replace the placeholder "#" URLs with your real links.
+ * `live` = the deployed site, `github` = the repo.
+ * Set either to undefined to hide/skip that button.
  */
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  live?: string;
+  github?: string;
+  glow: string;
+};
+
+const projects: Project[] = [
   {
     title: "Aperture — Photography Portfolio",
     description:
       "A cinematic gallery experience with scroll-driven reveals, lightbox viewing and a fully responsive masonry grid.",
     tech: ["React.js", "Framer Motion", "Web Design"],
+    live: "#",
     github: "#",
     glow: "from-primary/40 via-accent/25 to-transparent",
   },
@@ -34,6 +45,7 @@ const projects = [
     description:
       "An event discovery board for college clubs with filtering, registrations and an admin view backed by SQL.",
     tech: ["React.js", "SQL", "Frontend Development"],
+    live: "#",
     github: "#",
     glow: "from-accent/40 via-primary/25 to-transparent",
   },
@@ -42,6 +54,7 @@ const projects = [
     description:
       "A reusable set of animated interface components — buttons, cards, modals and page transitions.",
     tech: ["React.js", "Framer Motion"],
+    live: "#",
     github: "#",
     glow: "from-accent/35 via-primary/30 to-transparent",
   },
@@ -50,10 +63,12 @@ const projects = [
     description:
       "A landing page for a student video collective, built around bold typography and smooth section transitions.",
     tech: ["Web Design", "React.js", "Framer Motion"],
+    live: "#",
     github: undefined,
     glow: "from-primary/35 via-accent/30 to-transparent",
   },
 ];
+
 
 type Project = (typeof projects)[number];
 
