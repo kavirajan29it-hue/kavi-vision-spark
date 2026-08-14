@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { Github, Instagram, Linkedin, Mail } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 /** Replace these placeholder handles/links with real ones. */
 export const socials = [
-  { label: "Email", value: "kavi@example.com", href: "mailto:kavi@example.com", icon: Mail },
+  { label: "Email", value: "kavirajan085@gmail.com", href: "mailto:kavirajan085@gmail.com", icon: Mail },
+  { label: "Phone", value: "+91 85910 96493", href: "tel:+918591096493", icon: Phone },
   { label: "LinkedIn", value: "/in/kavi", href: "https://linkedin.com", icon: Linkedin },
   { label: "GitHub", value: "@kavi", href: "https://github.com", icon: Github },
   { label: "Instagram", value: "@kavi", href: "https://instagram.com", icon: Instagram },
@@ -30,7 +31,7 @@ export function Contact() {
                 open.
               </p>
               <motion.a
-                href="mailto:kavi@example.com"
+                href="mailto:kavirajan085@gmail.com"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-elegant"
