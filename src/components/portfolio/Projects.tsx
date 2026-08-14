@@ -97,7 +97,7 @@ function TiltCard({ project, index }: { project: Project; index: number }) {
         <motion.div
           aria-hidden
           style={{ left: glowX, top: glowY }}
-          className={`pointer-events-none absolute h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial bg-gradient-to-br ${project.glow} opacity-70 blur-3xl transition-opacity duration-500 group-hover:opacity-100`}
+          className={`pointer-events-none absolute h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br ${project.glow} opacity-70 blur-3xl transition-opacity duration-500 group-hover:opacity-100`}
         />
         <div
           aria-hidden
