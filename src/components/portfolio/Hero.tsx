@@ -1,3 +1,4 @@
+import { handleAnchorClick } from "@/lib/scroll";
 import { motion } from "framer-motion";
 import { ArrowDownRight, Sparkles } from "lucide-react";
 
@@ -88,6 +89,7 @@ export function Hero() {
         <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-4">
           <motion.a
             href="#projects"
+            onClick={(e) => handleAnchorClick(e, "#projects")}
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-elegant"
@@ -97,6 +99,7 @@ export function Hero() {
           </motion.a>
           <motion.a
             href="#contact"
+            onClick={(e) => handleAnchorClick(e, "#contact")}
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
