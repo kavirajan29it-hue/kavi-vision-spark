@@ -25,8 +25,8 @@ type Project = {
   title: string;
   description: string;
   tech: string[];
-  live?: string;
-  github?: string;
+  live?: string | undefined;
+  github?: string | undefined;
   glow: string;
 };
 
@@ -70,7 +70,6 @@ const projects: Project[] = [
 ];
 
 
-type Project = (typeof projects)[number];
 
 function TiltCard({ project, index }: { project: Project; index: number }) {
   const px = useMotionValue(0.5);
