@@ -34,7 +34,11 @@ export function Navbar() {
           scrolled ? "mt-3 rounded-2xl glass shadow-card sm:mx-6" : ""
         }`}
       >
-        <a href="#home" className="font-display text-lg font-semibold tracking-tight">
+        <a
+          href="#home"
+          onClick={(e) => handleAnchorClick(e, "#home")}
+          className="font-display text-lg font-semibold tracking-tight"
+        >
           Kavi<span className="text-primary">.</span>
         </a>
 
@@ -43,6 +47,7 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
+                onClick={(e) => handleAnchorClick(e, link.href)}
                 className="relative rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.label}
@@ -54,6 +59,7 @@ export function Navbar() {
         <div className="hidden md:block">
           <motion.a
             href="#contact"
+            onClick={(e) => handleAnchorClick(e, "#contact")}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-elegant"
@@ -87,7 +93,10 @@ export function Navbar() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => {
+                      setOpen(false);
+                      handleAnchorClick(e, link.href);
+                    }}
                     className="block rounded-xl px-4 py-3 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                   >
                     {link.label}
@@ -97,7 +106,10 @@ export function Navbar() {
               <li>
                 <a
                   href="#contact"
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => {
+                    setOpen(false);
+                    handleAnchorClick(e, "#contact");
+                  }}
                   className="mt-2 block rounded-xl bg-primary px-4 py-3 text-center text-sm font-medium text-primary-foreground"
                 >
                   Let's talk

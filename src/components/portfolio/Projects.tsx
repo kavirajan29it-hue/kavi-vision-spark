@@ -1,6 +1,19 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
+import { toast } from "sonner";
 import { Reveal, SectionHeading } from "./Reveal";
+import { isRealLink } from "@/lib/scroll";
+
+/** Placeholder buttons tell the visitor instead of silently doing nothing. */
+function openLink(href: string | undefined, label: string) {
+  if (isRealLink(href)) {
+    window.open(href, "_blank", "noopener,noreferrer");
+    return;
+  }
+  toast(`${label} link coming soon`, {
+    description: "Add a real URL in src/components/portfolio/Projects.tsx",
+  });
+}
 
 /**
  * Replace these placeholder projects with real ones.
@@ -88,23 +101,25 @@ export function Projects() {
               </ul>
 
               <div className="relative mt-8 flex flex-wrap gap-3 pt-2">
-                <motion.a
-                  href={project.link}
+                <motion.button
+                  type="button"
+                  onClick={() => openLink(project.link, "Project")}
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
                   className="inline-flex items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
                 >
                   View Project <ArrowUpRight size={15} />
-                </motion.a>
+                </motion.button>
                 {project.github ? (
-                  <motion.a
-                    href={project.github}
+                  <motion.button
+                    type="button"
+                    onClick={() => openLink(project.github, "GitHub")}
                     whileHover={{ scale: 1.04 }}
                     whileTap={{ scale: 0.96 }}
                     className="inline-flex items-center gap-1.5 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-secondary"
                   >
                     <Github size={15} /> GitHub
-                  </motion.a>
+                  </motion.button>
                 ) : null}
               </div>
             </motion.article>

@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
 import { socials } from "./Contact";
+import { handleAnchorClick } from "@/lib/scroll";
 
 export function Footer() {
   return (
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:px-8 md:flex-row md:items-center md:justify-between">
         <div>
-          <a href="#home" className="font-display text-lg font-semibold">
+          <a
+            href="#home"
+            onClick={(e) => handleAnchorClick(e, "#home")}
+            className="font-display text-lg font-semibold"
+          >
             Kavi<span className="text-primary">.</span>
           </a>
           <p className="mt-2 text-sm text-muted-foreground">
