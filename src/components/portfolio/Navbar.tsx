@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { handleAnchorClick } from "@/lib/scroll";
 
 const links = [
   { label: "About", href: "#about" },
